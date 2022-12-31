@@ -1,0 +1,36 @@
+.banner {
+    background-image: url('../../images/banner.jpg');
+}
+
+.bannerContent {
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 25px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title {
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-family: 'Montserrat';
+    text-align: center;
+}
+
+.subtitle {
+    color: darkgrey;
+    text-transform: capitalize;
+    font-family: 'Montserrat';
+    text-align: center;
+}
+
+
+/* .tagline {
+    display: flex;
+    height: 5%;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+} */

@@ -3,7 +3,7 @@ import classes from "./App.module.css";
 import Header from "./components/Header";
 import Homepage from "./Pages/Homepage";
 import CoinPage from "./Pages/CoinPage";
-
+import StyledEngineProvider from '@mui/material/StyledEngineProvider';
 import { CryptoContext } from "./CryptoContext";
 import { useEffect, useState } from "react";
 
@@ -15,7 +15,7 @@ function App() {
 
     useEffect(() => {
         if (currency === "PLN") {
-            setSymbol("PLN");
+            setSymbol("pln");
         } else if (currency === "USD") {
             setSymbol("$");
         }
@@ -23,6 +23,7 @@ function App() {
 
     return (
         <CryptoContext.Provider value={{ currency, setCurrency, symbol }}>
+            <StyledEngineProvider injectFirst>
             <BrowserRouter>
                 <div className={classes.App}>
                     <Header />
@@ -32,6 +33,7 @@ function App() {
                     </Routes>
                 </div>
             </BrowserRouter>
+            </StyledEngineProvider>
         </CryptoContext.Provider>
     );
 }

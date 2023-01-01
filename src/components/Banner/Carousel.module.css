@@ -1,11 +1,13 @@
 .carousel {
     height: 80%;
+
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     align-items: center;
 }
 
 .carouselItem {
+    width: 100px;
     height: max-content;
     display: flex;
     flex-direction: column;

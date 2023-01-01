@@ -3,7 +3,7 @@
 }
 
 .bannerContent {
-    height: 40vh;
+    height: min(50vh, 25rem);
     display: flex;
     flex-direction: column;
     padding-top: 25px;
@@ -12,6 +12,7 @@
 }
 
 .title {
+    font-size: clamp(2rem, 3vw + 1.5rem, 7rem);
     font-weight: bold;
     margin-bottom: 15px;
     font-family: 'Montserrat';
@@ -26,11 +27,11 @@
 }
 
 
-/* .tagline {
+.tagline {
     display: flex;
     height: 5%;
     flex-direction: column;
     justify-content: center;
     text-align: center;
 
-} */
+} 

@@ -10,8 +10,8 @@ import { useEffect, useState } from "react";
 
 function App() {
 
-    const [currency, setCurrency] = useState("PLN");
-    const [symbol, setSymbol] = useState("PLN");
+    const [currency, setCurrency] = useState("USD");
+    const [symbol, setSymbol] = useState("$");
 
     useEffect(() => {
         if (currency === "PLN") {

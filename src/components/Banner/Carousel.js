@@ -11,9 +11,6 @@ export function numberWithCommas(x) {
 }
 
 const Carousel = () => {
-
-
-
     const [trending, setTrending] = useState([]);
 
     const { currency, symbol } = useContext(CryptoContext);
@@ -26,13 +23,18 @@ const Carousel = () => {
                 <span>
                     {coin?.symbol}
                     &nbsp;
-                    <span>
+                    <span
+                        style={{
+                            color: profit > 0 ? "rgb(14,203,129)" : "red",
+                            fontWeight: 500,
+                        }}
+                    >
                         {profit && "+"}
                         {coin?.price_change_percentage_24h.toFixed(2)}%
                     </span>
                 </span>
                 <span className={classes.price}>
-                    {symbol} 
+                    {symbol}
                     {numberWithCommas(coin?.current_price.toFixed(2))}
                 </span>
             </Link>
@@ -45,7 +47,7 @@ const Carousel = () => {
         },
         512: {
             items: 4,
-            itemsFit: 'contain',
+            itemsFit: "contain",
         },
     };
 
@@ -53,7 +55,6 @@ const Carousel = () => {
         const { data } = await axios.get(TrendingCoins(currency));
         setTrending(data);
     };
-    console.log(trending);
 
     useEffect(() => {
         fetchTrendingCoins();

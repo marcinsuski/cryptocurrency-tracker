@@ -14,19 +14,6 @@ const Header = () => {
 
     const { currency, setCurrency } = useContext(CryptoContext);
  
-    // const [currency, setCurrency] = useState("PLN");
-    // const [symbol, setSymbol] = useState("z");
-
-    // useEffect(() => {
-    //     if (currency === "PLN") {
-    //         setSymbol("z");
-    //     } else if (currency === "USD") {
-    //         setSymbol("$");
-    //     }
-    // }, [currency]);
-
-  console.log(currency)
-
     const darkTheme = createTheme({
         palette: {
             primary: {

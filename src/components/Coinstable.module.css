@@ -40,12 +40,11 @@
 .table__cell {
     display: flex;
     gap: 10px;
- 
 }
 
 .table__cell img {
     margin-bottom: 10px;
-    height: 50px;
+    height: 30px;
 }
 
 .table__cell_div {
@@ -60,4 +59,15 @@
 
 .table__cell_name {
     color: darkgrey;
+}
+
+.pagination {
+    padding: 1.2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination ul {
+    color: gold;
 }

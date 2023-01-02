@@ -15,7 +15,7 @@ function App() {
 
     useEffect(() => {
         if (currency === "PLN") {
-            setSymbol("pln");
+            setSymbol("PLN");
         } else if (currency === "USD") {
             setSymbol("$");
         }

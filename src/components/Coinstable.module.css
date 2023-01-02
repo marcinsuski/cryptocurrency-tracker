@@ -28,18 +28,19 @@
 }
 
 .table__row {
-    background-color: "#16171a";
-    cursor: "pointer";
-    font-family: "Montserrat";
+    background-color: #16171a;
+    cursor: pointer;
+    font-family: Montserrat;
 }
 
 .table__row:hover {
-    background-color: "#131111";
+    background-color: #131111;
 }
 
 .table__cell {
     display: flex;
     gap: 10px;
+ 
 }
 
 .table__cell img {

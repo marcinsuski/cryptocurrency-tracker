@@ -102,10 +102,10 @@ const Coinstable = () => {
 
                                     return (
                                         <TableRow
+                                        className={classes.table__row}
                                             onClick={() =>
                                                 (navigate(`/coins/$${row.id}`))
                                             }
-                                            className={classes.table__row}
                                             key={row.name}
                                         >
                                             <TableCell

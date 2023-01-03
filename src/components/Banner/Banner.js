@@ -9,7 +9,7 @@ const Banner = () => {
         <div className={classes.banner}>
             <Container className={classes.bannerContent}>
                 <Typography variant="h2" className={classes.title}>
-                    Crypto Tracker
+                    Crypto Coin Tracker
                 </Typography>
                 <Typography variant="subtitle2" className={classes.subtitle}>
                     Get all the info regarding your favourite Crypto Currency

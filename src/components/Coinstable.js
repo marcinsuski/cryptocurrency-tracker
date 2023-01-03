@@ -72,7 +72,6 @@ const Coinstable = () => {
                 coin.symbol.toLowerCase().includes(search)
                
         );
-            console.log(handleSearch)
     };
 
 
@@ -96,6 +95,7 @@ const Coinstable = () => {
                             <TableHead className={classes.table__tablehead}>
                                 <TableRow>
                                     {[
+                                        "#",
                                         "Coin",
                                         "Price",
                                         "24 Change",
@@ -105,7 +105,7 @@ const Coinstable = () => {
                                             className={classes.tablehead__cell}
                                             key={head}
                                             align={
-                                                head === "Coin" ? "" : "right"
+                                                (head === "Coin") || (head === "#") ? "" : "right"
                                             }
                                         >
                                             {head}
@@ -133,6 +133,10 @@ const Coinstable = () => {
                                                 }
                                                 key={row.name}
                                             >
+                                                    <TableCell className={classes.number} align="left">
+                                                    {row.market_cap_rank}
+                                               
+                                                </TableCell>
                                                 <TableCell
                                                     component="th"
                                                     scope="row"

@@ -1,9 +1,12 @@
 .banner {
     background-image: url('../../images/banner.jpg');
+    background-size: cover;
+    background-position-y: 40%;
+    background-repeat: no-repeat;
 }
 
 .bannerContent {
-    height: min(50vh, 25rem);
+    height: clamp(20rem, 5vh + 18rem, 25rem);
     display: flex;
     flex-direction: column;
     padding-top: 25px;

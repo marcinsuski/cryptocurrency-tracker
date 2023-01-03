@@ -18,7 +18,7 @@ const Carousel = () => {
     const items = trending.map((coin) => {
         let profit = coin.price_change_percentage_24h >= 0;
         return (
-            <Link className={classes.carouselItem} to={`/coins/${coin.id}`}>
+            <Link className={classes.carouselItem} to={`/coins/$${coin.id}`}>
                 <img src={coin?.image} alt={coin.name} />
                 <span>
                     {coin?.symbol}
@@ -45,10 +45,14 @@ const Carousel = () => {
         0: {
             items: 2,
         },
-        512: {
-            items: 4,
+        600: {
+            items: 3,
             itemsFit: "contain",
         },
+        800: {
+            items: 4,
+            itemsFit: "contain",
+        }
     };
 
     const fetchTrendingCoins = async () => {

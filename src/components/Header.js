@@ -32,7 +32,7 @@ const Header = () => {
                         className={classes.title}
                         variant="h5"
                     >
-                        Crypto Tracker
+                        Crypto Coin Tracker
                     </Typography>
                     <Select
                         variant="outlined"

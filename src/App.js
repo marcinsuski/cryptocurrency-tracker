@@ -29,7 +29,7 @@ function App() {
                     <Header />
                     <Routes>
                         <Route path="/" exact element={<Homepage />} />
-                        <Route path="/coins/:id"  element={<CoinPage />} />
+                        <Route path="/coins/:id" element={<CoinPage />} />
                     </Routes>
                 </div>
             </BrowserRouter>

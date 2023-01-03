@@ -16,14 +16,17 @@ const CoinPage = () => {
     const { currency, symbol } = useContext(CryptoContext);
 
     const fetchCoin = async () => {
+        let newId = id.slice(1)
         const { data } = await axios.get(
-            `https://api.coingecko.com/api/v3/coins/bitcoin`
-        );
-        setCoin(data);
-    };
+            // SingleCoin(id)
+            `https://api.coingecko.com/api/v3/coins/${newId}`
+            );
+            setCoin(data);
+        };
+        
 
-    console.log(coin);
 
+ 
     useEffect(() => {
         fetchCoin();
     }, [currency]);

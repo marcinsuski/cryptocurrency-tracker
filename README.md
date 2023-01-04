@@ -25,7 +25,7 @@ The Crypto Coin Tracker will be developed further to add more general market sta
 ![](./src/images/screenshot2.JPG)
 
 ### Links
-- Live Site URL: [Link](https://lively-speculoos-185600.netlify.app/)
+- Live Site URL: [Link](https://ms-crypto-coin-tracker.netlify.app/)
 
 
 ### Built with

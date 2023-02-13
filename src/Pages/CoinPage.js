@@ -3,7 +3,6 @@ import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import CoinInfo from "../components/CoinInfo";
-import { SingleCoin } from "../config/api";
 import { CryptoContext } from "../CryptoContext";
 import classes from "./CoinPage.module.css";
 import parse from "html-react-parser";
@@ -16,26 +15,22 @@ const CoinPage = () => {
     const { currency, symbol } = useContext(CryptoContext);
 
     const fetchCoin = async () => {
-        let newId = id.slice(1)
+        let newId = id.slice(1);
         const { data } = await axios.get(
             // SingleCoin(id)
             `https://api.coingecko.com/api/v3/coins/${newId}`
-            );
-            setCoin(data);
-            // console.log(data)
-        };
-        
+        );
+        setCoin(data);
+        // console.log(data)
+    };
 
-
- 
     useEffect(() => {
         fetchCoin();
     }, [currency]);
 
     let html = coin?.description.en.split(". ")[0];
 
-if (!coin) return <LinearProgress style={{backgroundColor: "gold"}} />
-
+    if (!coin) return <LinearProgress style={{ backgroundColor: "gold" }} />;
 
     return (
         <div className={classes.container}>
@@ -61,60 +56,87 @@ if (!coin) return <LinearProgress style={{backgroundColor: "gold"}} />
                     {/* current price */}
                     <span>
                         <Typography variant="h5" className={classes.heading}>
-                            Current Price:{' '}
+                            Current Price:{" "}
                         </Typography>
                         &nbsp; &nbsp;
                         <Typography variant="h5">
                             {symbol}{" "}
-                            {numberWithCommas(coin?.market_data.current_price[currency.toLowerCase()])}
+                            {numberWithCommas(
+                                coin?.market_data.current_price[
+                                    currency.toLowerCase()
+                                ]
+                            )}
                         </Typography>
                     </span>
                     {/* market cap */}
                     <span>
                         <Typography variant="h5" className={classes.heading}>
-                            Market Cap:{' '}
+                            Market Cap:{" "}
                         </Typography>
                         &nbsp; &nbsp;
                         <Typography variant="h5">
-                        {symbol}{" "}
-                            {numberWithCommas(coin?.market_data.market_cap[currency.toLowerCase()]
-                            .toString().slice(0, -6)
-                            )} M
+                            {symbol}{" "}
+                            {numberWithCommas(
+                                coin?.market_data.market_cap[
+                                    currency.toLowerCase()
+                                ]
+                                    .toString()
+                                    .slice(0, -6)
+                            )}{" "}
+                            M
                         </Typography>
                     </span>
-                    <span >
+                    <span>
                         <Typography variant="h5" className={classes.heading}>
-                           24 hours high:{' '}
+                            24 hours high:{" "}
                         </Typography>
                         &nbsp; &nbsp;
-                        <Typography variant="h5"  style={{color: '#00d615'}}>
-                        {symbol}{" "}
-                            {numberWithCommas(coin?.market_data.high_24h[currency.toLowerCase()]
-                            .toString()
+                        <Typography variant="h5" style={{ color: "#00d615" }}>
+                            {symbol}{" "}
+                            {numberWithCommas(
+                                coin?.market_data.high_24h[
+                                    currency.toLowerCase()
+                                ].toString()
                             )}
                         </Typography>
                     </span>
                     <span>
                         <Typography variant="h5" className={classes.heading}>
-                           24 hours low:{' '}
+                            24 hours low:{" "}
                         </Typography>
                         &nbsp; &nbsp;
-                        <Typography variant="h5" style={{color: '#e90000'}}>
-                        {symbol}{" "}
-                            {numberWithCommas(coin?.market_data.low_24h[currency.toLowerCase()]
-                            .toString()
+                        <Typography variant="h5" style={{ color: "#e90000" }}>
+                            {symbol}{" "}
+                            {numberWithCommas(
+                                coin?.market_data.low_24h[
+                                    currency.toLowerCase()
+                                ].toString()
                             )}
                         </Typography>
                     </span>
                     <span>
                         <Typography variant="h5" className={classes.heading}>
-                           24 price change:{' '}
+                            24 price change:{" "}
                         </Typography>
                         &nbsp; &nbsp;
-                        <Typography variant="h5" style={{color: `${coin?.market_data.price_change_percentage_24h < 0 ? '#e90000' : '#00d615'}`}}>
-                        {/* {symbol}{" "} */}
-                            {numberWithCommas(coin?.market_data.price_change_percentage_24h.toFixed(2).toString()
-                            )} %
+                        <Typography
+                            variant="h5"
+                            style={{
+                                color: `${
+                                    coin?.market_data
+                                        .price_change_percentage_24h < 0
+                                        ? "#e90000"
+                                        : "#00d615"
+                                }`,
+                            }}
+                        >
+                            {/* {symbol}{" "} */}
+                            {numberWithCommas(
+                                coin?.market_data.price_change_percentage_24h
+                                    .toFixed(2)
+                                    .toString()
+                            )}{" "}
+                            %
                         </Typography>
                     </span>
                 </div>

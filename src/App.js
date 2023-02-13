@@ -26,12 +26,12 @@ function App() {
                     <div className={classes.App}>
                         <Header />
                         <Routes>
-                            <Route path="/" exact element={<Homepage />}>
+                            <Route path="/" exact element={<Homepage />} />
                                 <Route
                                     path="/coins/:id"
                                     element={<CoinPage />}
                                 />
-                            </Route>
+                           
                         </Routes>
                     </div>
                 </BrowserRouter>

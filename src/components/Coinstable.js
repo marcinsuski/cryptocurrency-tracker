@@ -3,6 +3,7 @@ import { CryptoContext } from "../CryptoContext";
 import { Container } from "@mui/system";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import {
+    Box,
     LinearProgress,
     Pagination,
     Table,
@@ -19,10 +20,9 @@ import axios from "axios";
 import classes from "./Coinstable.module.css";
 import { useNavigate } from "react-router-dom";
 import { numberWithCommas } from "./Banner/Carousel";
+import CoinsTableSummary from "./CoinsTableSummary";
 
-
-
-  const darkTheme = createTheme({
+const darkTheme = createTheme({
     palette: {
         primary: {
             main: "#fff",
@@ -37,10 +37,7 @@ import { numberWithCommas } from "./Banner/Carousel";
     },
 });
 
-
 const Coinstable = () => {
-
-
     let navigate = useNavigate();
     const { symbol } = useContext(CryptoContext);
 
@@ -49,8 +46,6 @@ const Coinstable = () => {
     const [search, setSearch] = useState("");
     const [page, setPage] = useState(1);
 
-
-
     const { currency } = useContext(CryptoContext);
 
     const fetchCoins = async () => {
@@ -58,11 +53,12 @@ const Coinstable = () => {
         const { data } = await axios.get(CoinList(currency));
         setCoins(data);
         setLoading(false);
+        // console.log(data)
     };
 
     useEffect(() => {
         fetchCoins();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [currency]);
 
     const handleSearch = () => {
@@ -70,10 +66,8 @@ const Coinstable = () => {
             (coin) =>
                 coin.name.toLowerCase().includes(search) ||
                 coin.symbol.toLowerCase().includes(search)
-               
         );
     };
-
 
     return (
         <ThemeProvider theme={darkTheme}>
@@ -81,6 +75,8 @@ const Coinstable = () => {
                 <Typography variant="h4" className={classes.title}>
                     Cryptocurrency Prices by Market Cap
                 </Typography>
+
+                {/* <CoinsTableSummary /> */}
                 <TextField
                     variant="outlined"
                     label="Search for a Crypto Currency"
@@ -88,9 +84,9 @@ const Coinstable = () => {
                     onChange={(e) => setSearch(e.target.value)}
                 />
                 <TableContainer>
-                         {loading ? (
+                    {loading ? (
                         <LinearProgress className={classes.table__loading} />
-                        ) : (
+                    ) : (
                         <Table>
                             <TableHead className={classes.table__tablehead}>
                                 <TableRow>
@@ -105,7 +101,9 @@ const Coinstable = () => {
                                             className={classes.tablehead__cell}
                                             key={head}
                                             align={
-                                                (head === "Coin") || (head === "#") ? "" : "right"
+                                                head === "Coin" || head === "#"
+                                                    ? ""
+                                                    : "right"
                                             }
                                         >
                                             {head}
@@ -133,9 +131,11 @@ const Coinstable = () => {
                                                 }
                                                 key={row.name}
                                             >
-                                                    <TableCell className={classes.number} align="left">
+                                                <TableCell
+                                                    className={classes.number}
+                                                    align="left"
+                                                >
                                                     {row.market_cap_rank}
-                                               
                                                 </TableCell>
                                                 <TableCell
                                                     component="th"
@@ -204,19 +204,18 @@ const Coinstable = () => {
                                     })}
                             </TableBody>
                         </Table>
-
                     )}
                 </TableContainer>
-                    <Pagination 
+                <Pagination
                     color="secondary"
                     className={classes.pagination}
-                    count={(handleSearch()?.length/10).toFixed(0)} 
-                    onChange={(_, value)=> {
+                    count={(handleSearch()?.length / 10).toFixed(0)}
+                    onChange={(_, value) => {
                         setPage(value);
                         window.scroll(0, 450);
                     }}
-                    />
-                </Container>
+                />
+            </Container>
         </ThemeProvider>
     );
 };

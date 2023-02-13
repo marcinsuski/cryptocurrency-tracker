@@ -38,7 +38,7 @@ const CoinInfo = ({ coin }) => {
     });
 
 
-    console.log(historicData);
+    // console.log(historicData);
 
     return (
         <ThemeProvider theme={darkTheme}>

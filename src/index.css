@@ -1,3 +1,9 @@
+:root {
+  --red: #e90000;
+  --green: #00d615;
+  --gold: #EEBC1D;
+}
+
 body {
   margin: 0;
   font-family: 'Montserrat',
@@ -9,4 +15,6 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+
+
+  }

@@ -21,7 +21,7 @@ Cryptocurrency Tracker is based on Coingecko API to track current prices of the 
 
 
 ## 💻 Demo
-Click the link and check the app: [Link](https://ms-crypto-coin-tracker.netlify.app/)
+Click the link and check the app: [Link](https://ms-cryptocoin-tracker.netlify.app/)
 
 ### Screenshot
 

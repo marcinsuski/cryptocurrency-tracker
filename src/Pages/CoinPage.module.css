@@ -12,9 +12,9 @@
 }
 
 .sidebar img {
-        margin-bottom: 20px;
-        height: 150px;
-        width: fit-content;
+    margin-bottom: 20px;
+    height: 150px;
+    width: fit-content;
 }
 
 .heading {
@@ -41,7 +41,7 @@
 }
 
 .marketData h5 {
-  font-size: clamp(1rem, 2vw + 0.2rem, 1.2rem);
+    font-size: clamp(1rem, 2vw + 0.2rem, 1.2rem);
 }
 
 .marketData span {
@@ -49,7 +49,6 @@
 }
 
 .heading {
-
 }
 
 @media screen and (max-width: 900px) {
@@ -63,14 +62,12 @@
     }
 
     .marketData {
-         display: flex;
-         justify-content: space-around;
+        display: flex;
+        justify-content: space-around;
     }
 }
 
-
 @media screen and (max-width: 600px) {
-
     .marketData {
         flex-direction: column;
         align-items: center;

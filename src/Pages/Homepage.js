@@ -1,14 +1,14 @@
-import React from 'react'
-import Banner from '../components/Banner/Banner'
-import Coinstable from '../components/Coinstable'
+import React from "react";
+import Banner from "../components/Banner/Banner";
+import Coinstable from "../components/Coinstable";
 
 const Homepage = () => {
-  return (
-    <>
-    <Banner/>
-    <Coinstable />
-    </>
-  )
-}
+    return (
+        <>
+            <Banner />
+            <Coinstable />
+        </>
+    );
+};
 
-export default Homepage
+export default Homepage;

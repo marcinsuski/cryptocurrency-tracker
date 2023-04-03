@@ -52,7 +52,7 @@ const Carousel = () => {
         800: {
             items: 4,
             itemsFit: "contain",
-        }
+        },
     };
 
     const fetchTrendingCoins = async () => {
@@ -63,7 +63,7 @@ const Carousel = () => {
     useEffect(() => {
         fetchTrendingCoins();
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [currency]);
 
     return (

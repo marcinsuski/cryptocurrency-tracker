@@ -1,5 +1,5 @@
 .banner {
-    background-image: url('../../images/banner.jpg');
+    background-image: url("../../images/banner.jpg");
     background-size: cover;
     background-position-y: 40%;
     background-repeat: no-repeat;
@@ -18,17 +18,16 @@
     font-size: clamp(2rem, 3vw + 1.5rem, 7rem);
     font-weight: bold;
     margin-bottom: 15px;
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     text-align: center;
 }
 
 .subtitle {
     color: darkgrey;
     text-transform: capitalize;
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     text-align: center;
 }
-
 
 .tagline {
     display: flex;
@@ -36,5 +35,4 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-
-} 
+}

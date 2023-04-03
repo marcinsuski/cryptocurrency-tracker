@@ -4,7 +4,7 @@ import axios from "axios";
 import classes from "./Coinstable.module.css";
 import { Box } from "@mui/material";
 
-const CoinsTableSummary = ({setLoading}) => {
+const CoinsTableSummary = ({ setLoading }) => {
     const [marketData, setMarketData] = useState([]);
 
     const fetchGlobalData = async () => {

@@ -13,7 +13,7 @@ const Header = () => {
     let navigate = useNavigate();
 
     const { currency, setCurrency } = useContext(CryptoContext);
- 
+
     const darkTheme = createTheme({
         palette: {
             primary: {

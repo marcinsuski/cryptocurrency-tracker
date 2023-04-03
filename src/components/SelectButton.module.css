@@ -1,5 +1,5 @@
 .selectButton {
-    border: 1px solid gold;
+    border: 1px solid rgb(255, 215, 0);
     border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
@@ -10,18 +10,16 @@
     text-align: center;
     margin: 5px 0 0 0;
     font-size: clamp(0.9rem, 2vw + 0.4rem, 1.1rem);
-    
-    
 }
 
 .selectButton:hover {
-    background-color: gold;
-    color: black;
+    background-color: rgb(255, 215, 0);
+    color: rgb(0, 0, 0);
     font-weight: 700;
 }
 
 .selected {
-    background-color: gold;
-    color: black;
+    background-color: rgb(255, 215, 0);
+    color: rgb(0, 0, 0);
     font-weight: 700;
 }

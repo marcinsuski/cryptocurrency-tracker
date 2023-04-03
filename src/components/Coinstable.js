@@ -183,7 +183,7 @@ const Coinstable = () => {
                                                         color:
                                                             profit > 0
                                                                 ? "rgb(14,203,129)"
-                                                                : "red",
+                                                                : "rgb(200,0,0)",
                                                         fontWeight: 500,
                                                     }}
                                                 >

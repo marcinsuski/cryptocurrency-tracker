@@ -14,10 +14,9 @@ const Banner = () => {
                 <Typography variant="subtitle2" className={classes.subtitle}>
                     Get all the info regarding your favourite Crypto Currency
                 </Typography>
-                <Carousel/>
-            
+                <Carousel />
             </Container>
-         </div>
+        </div>
     );
 };
 

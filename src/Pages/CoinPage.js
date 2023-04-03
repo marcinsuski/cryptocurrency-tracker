@@ -30,7 +30,8 @@ const CoinPage = () => {
 
     let html = coin?.description.en.split(". ")[0];
 
-    if (!coin) return <LinearProgress style={{ backgroundColor: "gold" }} />;
+    if (!coin)
+        return <LinearProgress style={{ backgroundColor: "rgb(255,215,0)" }} />;
 
     return (
         <div className={classes.container}>
